@@ -47,10 +47,18 @@ def _information_gain(feature, y):
 # def _entropy(y):
 #     probabilities = np.bincount(y) / len(y)
 #     return -np.sum(probabilities * np.log2(probabilities + 1e-10))
+
 # implementation of entropy that works with non-numeric labels
 def _entropy(y):
     probabilities = y.value_counts(normalize=True)
     return -np.sum(probabilities * np.log2(probabilities + 1e-10))
+
+def gini_impurity(labels):
+    n = len(labels)
+    classes = np.unique(labels)
+    gini = 0.0
+    for c in classes:
+        p = np.sum(labels == c)
 
 if __name__ == "__main__":
     df = pd.read_csv("data.csv", sep=" ")
