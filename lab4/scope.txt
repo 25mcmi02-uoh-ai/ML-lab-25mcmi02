@@ -1,0 +1,3 @@
+- after selecting the training set, what if one of the classes is not included in the sampling.
+- what if one of the records is missing in the user input for testing.
+- 
